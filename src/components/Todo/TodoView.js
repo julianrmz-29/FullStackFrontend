@@ -21,12 +21,12 @@ export default function TodoView(){
         }
         const result = await response.json();
         if(result.success){            
-            setTodoData(result.data)
+            setTodoData(result.data);
         }else{
-            console.error('Error retriving todos: ', result.message);        
+            alert('Error retriving task to do list: ');
         }      
         } catch (error) {
-        console.error('Error an occurred in the fetch data: ', error)
+            alert('Error connecting to the server');
         }
     };
 
@@ -45,17 +45,14 @@ export default function TodoView(){
             });
 
             if(response.ok){
-                console.log('Task add successfull');
                 fetchTodos();
                 closeModal();
             }
             else{
-                console.log('Error ocurred: ', response);
-                
+                alert('Error adding task');
             }
         } catch (error) {
-            console.error('error: ', error);
-            
+            alert('Error connecting to the server');
         }
         finally{
             setIsLoading(false);
@@ -78,16 +75,13 @@ export default function TodoView(){
             });
 
             if (response.ok) {
-                console.log('Task updated successfully');
                 fetchTodos();
                 closeModal();
             } else {
-                console.error("Error occurred: ", response);
                 alert('Error updating task');
             }
         } catch (error) {
-            console.error("Error: ", error);
-            alert('Error updating task');
+            alert('Error connecting to the server');
         } finally {
             setIsLoading(false);
         }
@@ -101,15 +95,12 @@ export default function TodoView(){
                 });
                 
                 if (response.ok) {
-                    console.log('Successfully removed id: ', id);
                     fetchTodos(); 
                 } else {
-                    console.error("Error occurred: ", response);
                     alert('Error deleting task');
                 }
             } catch (error) {
-                console.error("Error: ", error);
-                alert('Error deleting task');
+                alert('Error connecting to the server');
             }
         }
     };
