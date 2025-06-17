@@ -1,0 +1,32 @@
+
+.Navbar {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #dadaea;
+}
+
+.LinkBtn {
+    padding: 10px 15px;
+    margin-left: 10px;
+    background-color: #8484cd;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+}
+
+.LinkBtn:hover {
+    background-color: #4e4d6e;
+}
+
+.ALink {
+  color: #ffffff;
+}
